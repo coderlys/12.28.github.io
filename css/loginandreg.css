@@ -1,0 +1,240 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100% !important;
+}
+body {
+  font-family: "微软雅黑";
+  font-size: 12px;
+  color: #666;
+  margin: 0 auto;
+}
+img {
+  border: 0px;
+}
+/*input { border: 0px; }*/
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.head {
+  width: 100%;
+  margin: 0 auto;
+  height: 115px;
+  border-bottom: 8px solid #f2f2f2;
+}
+.head .logo {
+  width: 305px;
+  margin: 0 auto;
+  height: 83px;
+  padding-top: 33px;
+}
+.head .logo h1 {
+  margin: 0 auto;
+  color: #000;
+  font-size: 18px;
+  height: 49px;
+}
+.head .logo h1 a {
+  float: left;
+}
+.head .logo h1 span {
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.wapper {
+  width: 350px;
+  margin: 0 auto;
+}
+.wapper .top {
+  height: 44px;
+  width: 400px;
+  margin-top: 40px;
+}
+.wapper .top li {
+  width: 174px;
+  float: left;
+  color: #666;
+  border-left: 0px;
+  border-right: 1px solid #d0d0d0;
+  border-bottom: 1px solid #ff6a00;
+  border-top: 1px solid #d0d0d0;
+  height: 33px;
+  font-size: 18px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+.wapper .top li img {
+  float: left;
+  margin-left: 27px;
+  padding-right: 10px;
+  margin-top: 2px;
+}
+/*.wapper .top li.current { color: #ff4800; background: url(../images/bg1.jpg) repeat-x; border-bottom: 0px; border-top: 1px solid #ff6a00; border-right: 1px solid #ff6a00; border-left: 1px solid #ff6a00; height: 34px; }*/
+/*.wapper .top li.current img { margin-left: 32px; }*/
+.wapper .con {
+  border: 1px solid #ff6a00;
+  border-top: 0px;
+  width: 349px;
+  padding-top: 40px;
+}
+.con .con_group {
+}
+.con .con_group .text_group {
+  margin-bottom: 25px;
+  margin-left: 20px;
+}
+.con .con_group .text_group .la {
+  float: left;
+  width: 55px;
+  text-align: right;
+  font-size: 14px;
+  line-height: 40px;
+}
+.con .con_group .text_group .txet_in1 {
+  border: 1px solid #b0b0b0;
+  height: 32px;
+  width: 300px;
+  float: left;
+  line-height: 32px;
+  padding-left: 10px;
+  color: #666;
+  font-size: 16px;
+}
+.con .con_group .forget {
+  margin-left: 20px;
+  overflow: hidden;
+  width: 315px;
+  margin-bottom: 25px;
+}
+.con .con_group .forget a {
+  color: #2884b9;
+  float: left;
+}
+.con .con_group .forget span {
+  float: right;
+  color: #d00202;
+}
+.con .con_group .forget span img {
+  float: left;
+  margin-top: 2px;
+  margin-right: 3px;
+}
+.con .con_group .text_group .ch {
+  float: left;
+  margin-top: 2px;
+  margin-right: 3px;
+}
+.con_group .text_group .disanfang {
+  overflow: hidden;
+  margin-top: 10px;
+}
+.text_group .disanfang a {
+  color: #666;
+}
+.text_group .disanfang a img {
+  margin-right: 3px;
+}
+.con .con_group .text_group .txet_in2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #b0b0b0;
+  float: left;
+  width: 295px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  color: #666;
+  font-size: 16px;
+  border-radius: 4px;
+}
+.codeBtn {
+  font-size: 12px;
+  color: #fff;
+  background-color: #ff6a00;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  border-radius: 10px;
+  padding: 0px 4px;
+  margin-right: 10px;
+}
+.con .con_group .text_group .txet_in2 input {
+  width: 90%;
+  height: 80%;
+  border: 0px;
+  outline: none;
+  font-size: 16px;
+}
+.con .con_group .text_group .ri {
+  float: left;
+  margin-left: 4px;
+  margin-top: 12px;
+}
+.con .con_group .jg {
+  margin-top: 7px;
+  color: #d80000;
+}
+.con .con_group .jg img {
+  width: 12px;
+  float: left;
+  margin-top: 2px;
+  margin-right: 4px;
+}
+.con .con_group .yzm {
+  float: left;
+  padding-left: 7px;
+  height: 32px;
+  line-height: 25px;
+  color: #666;
+  border: 1px solid #b0b0b0;
+  font-size: 14px;
+}
+.wrap-statistics {
+  visibility: hidden;
+}
+
+.language {
+  width: 100%;
+  height: 26px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.language select {
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-align: center;
+  outline: none;
+  color: #567d8e;
+  font-weight: bold;
+  width: auto;
+  padding: 0 2%;
+  margin: 0;
+}
+
+.language select option {
+  text-align: center;
+}
+
+.eye img {
+  width: 1.55rem;
+  vertical-align: middle;
+}

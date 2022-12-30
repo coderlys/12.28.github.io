@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+    />
+    <meta http-equiv="Cache-Control" content="must-revalidate,no-cache" />
+    <title>用户登录 - 金海湾</title>
+    <link type="text/css" href="./css/loginandreg.css" rel="stylesheet" />
+    <script type="text/javascript" src=".js/jquery-1.12.4.min.js"></script>
+    <script language="JavaScript" type="text/javascript">
+      window.onload = function () {
+        if (!(document.cookie || navigator.cookieEnabled)) {
+          document.getElementById("display_message").innerHTML =
+            "<div style=\"text-align:center; font-size:14px; padding: 100px 0px 100px 0px;\"><font color='red'>您的浏览器不支持Cookie，无法正常登录，请开启Cookie后重试。</div></font>";
+          document.getElementById("formcontent").style.display = "none";
+        } else {
+        }
+        var tempaccount = document.getElementById("account");
+        if (tempaccount.value == "") {
+          tempaccount.value = "手机号 或 Email ";
+          tempaccount.style.color = "#888888";
+        }
+      };
+    </script>
+    <!--[if IE 6
+      ]><script type="text/javascript" src="/js/iepng.js"></script
+    ><![endif]-->
+    <style type="text/css">
+      .tiao {
+        width: 310px;
+        padding-left: 20px;
+        overflow: hidden;
+        padding-bottom: 40px;
+        font-size: 16px;
+      }
+
+      .tiao table {
+        border: 1px solid #b3b3b3;
+        height: 45px;
+        border-radius: 3px;
+      }
+
+      .tiao input {
+        width: 220px;
+        height: 30px;
+        line-height: 30px;
+        list-style: none;
+        border: 0px solid #b3b3b3;
+        padding-left: 0px;
+        color: #999;
+        font-size: 16px;
+        box-shadow: none;
+        outline-width: 0px;
+      }
+      .ch label {
+        padding-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      name="form_login"
+      method="post"
+      action="/SSO/Login.aspx"
+      onsubmit="javascript:return WebForm_OnSubmit();"
+      id="form_login"
+    >
+      <div>
+        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+        <input
+          type="hidden"
+          name="__EVENTARGUMENT"
+          id="__EVENTARGUMENT"
+          value=""
+        />
+        <input
+          type="hidden"
+          name="__VIEWSTATE"
+          id="__VIEWSTATE"
+          value="/wEPDwUKMTA0NTQyNjc4OQ9kFgJmD2QWAgIBDw9kFgQeB29uZm9jdXMFbmlmKHRoaXMudmFsdWU9PSfmiYvmnLrlj7cv6YKu566xJyl7dGhpcy52YWx1ZT0nJzt0aGlzLnN0eWxlLmNvbG9yPScjMDAwMDAwJzt9ZWxzZXt0aGlzLnN0eWxlLmNvbG9yPScjMDAwMDAwJzt9HgZvbmJsdXIFTWlmKHRoaXMudmFsdWU9PScnKXt0aGlzLnZhbHVlPSfmiYvmnLrlj7cv6YKu566xJzt0aGlzLnN0eWxlLmNvbG9yPScjMzMzMzMzJzt9ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQUJa2VlcGxvZ2lueh4IC2eKRaFy/Wzg4EgJVq2xjDY="
+        />
+      </div>
+
+      <script type="text/javascript">
+        //<![CDATA[
+        var theForm = document.forms["form_login"];
+        if (!theForm) {
+          theForm = document.form_login;
+        }
+        function __doPostBack(eventTarget, eventArgument) {
+          if (!theForm.onsubmit || theForm.onsubmit() != false) {
+            theForm.__EVENTTARGET.value = eventTarget;
+            theForm.__EVENTARGUMENT.value = eventArgument;
+            theForm.submit();
+          }
+        }
+        //]]>
+      </script>
+
+      <script
+        src="/WebResource.axd?d=uPJ2ls-9uu7fe-LHsb5n0RXuJ1ppQ2tAkuZ8JXjbJ8cqEj-ng-EHJZHikE3lSkOR1-vmO-YCZh-Ac69IVq46bkaiD3w1&amp;t=637823185705833095"
+        type="text/javascript"
+      ></script>
+
+      <script
+        src="/WebResource.axd?d=YAt_NzzDr6-vh_h_pkttfqdb-H670tgh6SjKPkKVle0y849iEfb7XsO4DPf6tULSg2odBMr7vEZmG8EDkEQS2bPcX_1_mvVJpsj2folguVNHIr0Z0&amp;t=637823185705833095"
+        type="text/javascript"
+      ></script>
+      <script type="text/javascript">
+        //<![CDATA[
+        function WebForm_OnSubmit() {
+          if (
+            typeof ValidatorOnSubmit == "function" &&
+            ValidatorOnSubmit() == false
+          )
+            return false;
+          return true;
+        }
+        //]]>
+      </script>
+
+      <div>
+        <input
+          type="hidden"
+          name="__VIEWSTATEGENERATOR"
+          id="__VIEWSTATEGENERATOR"
+          value="C2EE9ABB"
+        />
+        <input
+          type="hidden"
+          name="__EVENTVALIDATION"
+          id="__EVENTVALIDATION"
+          value="/wEdAAX23L4Nn4uvRR7RJbMltGrUg6pvxMVtw/l0Jc14klyMDO4sciJO3Hoc68xTFtZGQEiOksx6DtFKftYDRM+V2O/gop4oRunf14dz2Zt2+QKDEPxZVfQEYc54aSVdqNExr1O3ql0T"
+        />
+      </div>
+      <div style="width: 100%; margin: 0 auto">
+        <style>
+          .mobile_icon {
+            background: rgba(0, 0, 0, 0) url("./images/no.png") repeat scroll 0
+              0;
+            float: left;
+            height: 17px;
+            margin: 2px 2px 0 0;
+            width: 13px;
+          }
+
+          .mobile {
+            color: #333;
+            display: inline;
+            height: 22px;
+            line-height: 22px;
+          }
+        </style>
+        <div class="head" style="height: 150px">
+          <div style="float: left">
+            <a
+              style="padding-left: 10px"
+              class="mobile"
+              href="https://www.jinbay.com"
+              >金海湾首页</a
+            >&nbsp;|&nbsp;
+          </div>
+          <div style="float: left">
+            <em class="mobile_icon"></em
+            ><a class="mobile" href="https://www.jinbay.com/m/">手机金海湾</a>
+          </div>
+          <div class="logo" style="text-align: center; height: 140px">
+            <a href="https://www.jinbay.com">
+              <img src="./images/jinbaylogo.jpg" width="100" alt="Logo" />
+            </a>
+          </div>
+        </div>
+
+        <div class="wapper">
+          <div class="language">
+            <select name="language" id="language">
+              <option value="zh-CN" selected>中文 Chinese</option>
+              <option value="en-US">English 英文</option>
+            </select>
+            <label for="language">
+              <img
+                style="padding-bottom: 5px"
+                src="https://s2.jtimg.net/city/images/on.png"
+                alt="Select"
+              />
+            </label>
+          </div>
+
+          <ul class="top">
+            <li
+              id="li1"
+              style="
+                border-left: 1px solid #d0d0d0;
+                border-right: 0px;
+                text-align: center;
+              "
+            >
+              <a style="color: #666666" href="./userregister.html">
+                <img src="./images/login1.png" id="L1" /> 手机号注册</a
+              >
+            </li>
+            <li
+              id="li2"
+              style="
+                border-left: 1px solid #ff6a00;
+                height: 34px;
+                background: url(../images/bg1.jpg) repeat-x;
+                color: #ff6a00;
+                border-top-color: #ff6a00;
+                border-right-color: #ff6a00;
+                border-bottom-style: none;
+                text-align: center;
+              "
+            >
+              立即登录
+            </li>
+          </ul>
+          <div style="clear: both"></div>
+          <div class="con">
+            <div class="con_group" id="con1">
+              <input type="hidden" name="action" value="login" />
+              <input
+                type="hidden"
+                name="ReURL"
+                value="https%3a%2f%2fwww.jinbay.com%2f%2f"
+              />
+              <div class="tiao" style="padding-bottom: 30px">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="50" style="text-align: center">
+                      <img
+                        src="images/ico02.png"
+                        height="28"
+                        alt="cell phone icon"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        name="account"
+                        type="text"
+                        maxlength="50"
+                        id="account"
+                        tabindex="1"
+                        autocomplete="off"
+                        required="required"
+                        placeholder="手机号 或 Email"
+                        onfocus="if(this.value==&#39;手机号 或 Email&#39;){this.value=&#39;&#39;;this.style.color=&#39;#000000&#39;;}else{this.style.color=&#39;#000000&#39;;}"
+                        onblur="if(this.value==&#39;&#39;){this.value=&#39;手机号 或 Email&#39;;this.style.color=&#39;#333333&#39;;}"
+                        style="width: 220px"
+                      />
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="tiao" style="padding-bottom: 20px">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tbody>
+                    <tr>
+                      <td width="50" style="text-align: center">
+                        <img
+                          src="images/ico01.png"
+                          height="25"
+                          alt="password icon"
+                        />
+                      </td>
+                      <td>
+                        <div class="login-pass">
+                          <input
+                            name="password"
+                            type="password"
+                            maxlength="25"
+                            id="password"
+                            tabindex="2"
+                            autocomplete="off"
+                            required="required"
+                            placeholder="密码"
+                            style="width: 200px"
+                          />
+                          <span class="eye">
+                            <span
+                              id="rfvPassword"
+                              style="
+                                color: Red;
+                                font-weight: bold;
+                                line-height: 32px;
+                                visibility: hidden;
+                              "
+                              >*</span
+                            >
+
+                            <img
+                              src="images/yanjing2.png"
+                              alt=""
+                              style="width: 25px; height: 25px"
+                            />
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p style="clear: both; width: 315px; margin-left: 20px">
+                <span> </span>
+              </p>
+              <p class="forget" style="clear: both; margin-bottom: 45px">
+                <a href="/user/getpassword.aspx">忘记密码?</a>
+              </p>
+              <div
+                class="text_group"
+                style="
+                  clear: both;
+                  display: flex;
+                  justify-content: space-between;
+                  margin-right: 20px;
+                "
+              >
+                <span class="ch"
+                  ><input
+                    id="keeplogin"
+                    type="checkbox"
+                    name="keeplogin"
+                    checked
+                  /><label for="keeplogin"
+                    >同意
+                    <a href="" style="color: #1e80bf">金海湾服务条款</a>
+                  </label></span
+                >
+
+                <a href="" style="color: #1e80bf">联系金海湾</a>
+              </div>
+              <div class="text_group" style="margin-left: 15px">
+                <input
+                  type="submit"
+                  name="btnLogin"
+                  value="登录"
+                  onclick='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("btnLogin", "", true, "login", "", false, false))'
+                  id="btnLogin"
+                  style="
+                    background: #ff6a00 none repeat scroll 0 0;
+                    border: 0px solid #ff6a00;
+                    border-radius: 3px;
+                    box-shadow: 0 1px 2px 0 #ff6a00;
+                    color: white;
+                    cursor: pointer;
+                    font: bold 18px/34px Arial, SimSun;
+                    height: 34px;
+                    padding: 0 30px;
+                    vertical-align: middle;
+                    width: 320px;
+                    -webkit-appearance: none;
+                  "
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(["_setAccount", "UA-1483977-7"]);
+          _gaq.push(["_setDomainName", "jinbay.com"]);
+          _gaq.push(["_setAllowLinker", true]);
+          _gaq.push(["_trackPageview"]);
+
+          (function () {
+            var ga = document.createElement("script");
+            ga.type = "text/javascript";
+            ga.async = true;
+            ga.src =
+              ("https:" == document.location.protocol
+                ? "https://ssl"
+                : "http://www") + ".google-analytics.com/ga.js";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+
+        <div
+          style="
+            text-align: center;
+            border-top: 8px solid #f2f2f2;
+            margin: 0 auto;
+            width: 100%;
+            margin-top: 20px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+          "
+        >
+          &copy; 2022 Jinbay.com. 版权所有.
+        </div>
+      </div>
+
+      <script type="text/javascript">
+        //<![CDATA[
+        var Page_Validators = new Array(
+          document.getElementById("rfvAccount"),
+          document.getElementById("revAccount"),
+          document.getElementById("rfvPassword")
+        );
+        //]]>
+      </script>
+
+      <script type="text/javascript">
+        //<![CDATA[
+        var rfvAccount = document.all
+          ? document.all["rfvAccount"]
+          : document.getElementById("rfvAccount");
+        rfvAccount.controltovalidate = "account";
+        rfvAccount.errormessage = "*";
+        rfvAccount.display = "Dynamic";
+        rfvAccount.validationGroup = "login";
+        rfvAccount.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+        rfvAccount.initialvalue = "";
+        var revAccount = document.all
+          ? document.all["revAccount"]
+          : document.getElementById("revAccount");
+        revAccount.controltovalidate = "account";
+        revAccount.errormessage = "*";
+        revAccount.validationGroup = "login";
+        revAccount.evaluationfunction =
+          "RegularExpressionValidatorEvaluateIsValid";
+        revAccount.validationexpression =
+          "(\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)|([a-zA-Z0-9_-]{6,30})";
+        var rfvPassword = document.all
+          ? document.all["rfvPassword"]
+          : document.getElementById("rfvPassword");
+        rfvPassword.controltovalidate = "password";
+        rfvPassword.errormessage = "*";
+        rfvPassword.validationGroup = "login";
+        rfvPassword.evaluationfunction =
+          "RequiredFieldValidatorEvaluateIsValid";
+        rfvPassword.initialvalue = "";
+        //]]>
+      </script>
+
+      <script type="text/javascript">
+        //<![CDATA[
+
+        var Page_ValidationActive = false;
+        if (typeof ValidatorOnLoad == "function") {
+          ValidatorOnLoad();
+        }
+
+        function ValidatorOnSubmit() {
+          if (Page_ValidationActive) {
+            return ValidatorCommonOnSubmit();
+          } else {
+            return true;
+          }
+        }
+        //]]>
+      </script>
+    </form>
+    <script type="text/javascript">
+      $(".login-pass").each(function () {
+        $(this)
+          .find("img")
+          .click(function () {
+            if (
+              $(this).attr("src") ==
+              "https://passport.16j.com/images/yanjing.png"
+            ) {
+              $(".login-pass input").attr("type", "password");
+              $(this).attr(
+                "src",
+                "https://passport.16j.com/images/yanjing2.png"
+              );
+            } else {
+              $(".login-pass  input").attr("type", "text");
+              $(this).attr(
+                "src",
+                "https://passport.16j.com/images/yanjing.png"
+              );
+            }
+          });
+      });
+      $("#language").change(function () {
+        window.location.href =
+          "https://passport.jinbay.com/login.aspx?reurl=https://www.jinbay.com//&lang=" +
+          $(this).val();
+      });
+    </script>
+  </body>
+</html>

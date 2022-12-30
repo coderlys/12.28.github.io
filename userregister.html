@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+    />
+    <meta http-equiv="Cache-Control" content="must-revalidate,no-cache" />
+    <title>新用户注册 -</title>
+    <link type="text/css" href="./css/loginandreg.css" rel="stylesheet" />
+    <script type="text/javascript">
+      if (top.location != self.location)
+        top.location = "https://passport.jinbay.com/user/userregister.aspx";
+    </script>
+    <script type="text/javascript" src="./js/user/js/checkuser_v5.js"></script>
+    <link href="./css/drag.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="./js/drag.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $("#VerificationCode").slide("300*200", "DoneVerification");
+      });
+      function DoneVerification() {
+        CodeOK = 1;
+        document.getElementById("Code_txt").innerHTML = "";
+      }
+    </script>
+
+    <!--[if IE 6
+      ]><script type="text/javascript" src="/js/iepng.js"></script
+    ><![endif]-->
+  </head>
+  <body>
+    <form method="post" name="register" id="register" action="">
+      <div style="width: 100%; margin: 0 auto">
+        <style>
+          .mobile_icon {
+            background: rgba(0, 0, 0, 0) url("/images/mobile_icon.gif") repeat
+              scroll 0 0;
+            float: left;
+            height: 17px;
+            margin: 2px 2px 0 0;
+            width: 13px;
+          }
+
+          .mobile {
+            color: #333;
+            display: inline;
+            height: 22px;
+            line-height: 22px;
+          }
+        </style>
+        <div class="head" style="height: 150px">
+          <div style="float: left">
+            <a
+              style="padding-left: 10px"
+              class="mobile"
+              href="https://www.jinbay.com"
+              >金海湾首页</a
+            >&nbsp;|&nbsp;
+          </div>
+          <div style="float: left">
+            <em class="mobile_icon"></em
+            ><a class="mobile" href="https://www.jinbay.com/m/">手机金海湾</a>
+          </div>
+          <div class="logo" style="text-align: center; height: 140px">
+            <a href="https://www.jinbay.com">
+              <img src="./images/jinbaylogo.jpg" width="100" alt="Logo" />
+            </a>
+          </div>
+        </div>
+
+        <div class="wapper">
+          <div class="language">
+            <select name="language" id="language">
+              <option value="zh-CN" selected>中文 Chinese</option>
+              <option value="en-US">English 英文</option>
+            </select>
+            <label for="language">
+              <img
+                style="padding-bottom: 5px"
+                src="https://s2.jtimg.net/city/images/on.png"
+                alt="Select"
+              />
+            </label>
+          </div>
+
+          <ul class="top">
+            <li
+              id="li2"
+              style="
+                border-left: 1px solid #ff6a00;
+                height: 34px;
+                background: url(../images/bg1.jpg) repeat-x;
+                color: #ff6a00;
+                border-top-color: #ff6a00;
+                border-right-color: #ff6a00;
+                border-bottom-style: none;
+              "
+            >
+              <img src="./images/login1.png" id="L1" />手机号注册
+            </li>
+            <li
+              id="li1"
+              style="
+                border-left: 0px solid #ffffff;
+                height: 33px;
+                background: none;
+                color: #666666;
+                border-top-color: #d0d0d0;
+                border-left-color: #d0d0d0;
+                border-bottom: 1px solid #ff6a00;
+                text-align: center;
+              "
+            >
+              <a style="color: #666666" href="./login.html"> 用户登录 </a>
+            </li>
+          </ul>
+          <div style="clear: both"></div>
+          <div class="con">
+            <div class="con_group" id="con2">
+              <input type="hidden" name="action" value="save" />
+              <input
+                type="hidden"
+                name="RefererSiteURL"
+                value="https%3a%2f%2fpassport.jinbay.com%2flogin.aspx%3freurl%3dhttps%3a%2f%2fwww.jinbay.com%2f%2f"
+              />
+              <input
+                type="hidden"
+                id="nextreurl"
+                name="nextreurl"
+                value="https%3a%2f%2fwww.jinbay.com%2f%2f"
+              />
+
+              <div class="text_group">
+                <div class="txet_in2">
+                  <img
+                    src="images/ico02.png"
+                    height="24"
+                    alt="cell phone icon"
+                  />
+                  <input
+                    style="margin-left: 0px"
+                    width="100%"
+                    height="100%"
+                    name="phone"
+                    type="text"
+                    id="phone"
+                    onblur="CheckPhone();"
+                    value=""
+                    maxlength="50"
+                    required="required"
+                    autocomplete="off"
+                    placeholder="手机号"
+                  />
+                </div>
+                <p id="phone_pass"></p>
+                <div style="clear: both"></div>
+                <p id="phone_txt" class="jg"></p>
+              </div>
+
+              <div class="text_group">
+                <div class="txet_in2" style="">
+                  <img
+                    src="images/ico01.png"
+                    height="20"
+                    alt="cell phone icon"
+                  />
+
+                  <input
+                    style="margin-left: 0px; width: 74%"
+                    ;
+                    name="Password"
+                    type="password"
+                    class="txet_in2"
+                    id="Password"
+                    onblur="CheckPassword();"
+                    value=""
+                    maxlength="20"
+                    required="required"
+                    placeholder="密码"
+                  />
+
+                  <span class="eye" style="padding-right: 10px">
+                    <img
+                      src="images/yanjing2.png"
+                      alt=""
+                      style="width: 25px; height: 25px"
+                    />
+                  </span>
+                </div>
+
+                <p id="Password_pass"></p>
+                <div style="clear: both"></div>
+                <p id="Password_txt" class="jg"></p>
+              </div>
+
+              <div class="text_group">
+                <div class="txet_in2">
+                  <img
+                    src="images/code.png"
+                    height="20"
+                    alt="cell phone icon"
+                  />
+
+                  <input
+                    style="margin-left: 0px; width: 50%"
+                    name="code"
+                    type="text"
+                    class="txet_in2"
+                    id="code"
+                    value=""
+                    maxlength="20"
+                    required="required"
+                    placeholder="手机验证码"
+                  />
+
+                  <a class="codeBtn" href="">获取手机验证码</a>
+                </div>
+                <p id="RePassword_pass"></p>
+                <div style="clear: both"></div>
+                <p id="RePassword_txt" class="jg"></p>
+              </div>
+
+              <div style="padding-left: 20px; margin-bottom: 4px">
+                <label for="name" class="la">手机验证：</label>
+              </div>
+              <div
+                class="text_group"
+                style="margin-bottom: 5px; padding-left: 4px"
+              >
+                <div
+                  id="VerificationCode"
+                  style="width: 200px; height: 134px"
+                ></div>
+
+                <div style="clear: both"></div>
+                <p id="Code_txt" class="jg"></p>
+              </div>
+              <div
+                class="text_group"
+                style="
+                  margin-bottom: 5px;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-right: 20px; ;
+                "
+              >
+                <div style="float: left; padding: 18px 0px 0px">
+                  <input
+                    name="Accept"
+                    id="Accept"
+                    type="checkbox"
+                    value="1"
+                    checked="checked"
+                    onclick="CheckAccept();"
+                    class="ch"
+                    style="margin-bottom: 10px"
+                  />同意<a
+                    href="https://www.jinbay.com/about/useterms.htm"
+                    target="_blank"
+                    style="color: #1e80bf"
+                  >
+                    金海湾服务条款</a
+                  >
+                </div>
+
+                <a href="" style="color: #1e80bf">联系金海湾</a>
+              </div>
+              <div class="text_group" style="margin-left: 15px">
+                <input
+                  type="submit"
+                  style="
+                    background: #ff6a00 none repeat scroll 0 0;
+                    border: 0px solid #ff6a00;
+                    border-radius: 3px;
+                    box-shadow: 0 1px 2px 0 #ff6a00;
+                    color: white;
+                    cursor: pointer;
+                    font: bold 18px/34px Arial, SimSun;
+                    height: 34px;
+                    padding: 0 30px;
+                    vertical-align: middle;
+                    width: 310px;
+                    -webkit-appearance: none;
+                    margin-left: 5px;
+                  "
+                  value="立即注册"
+                  name="btnRegister"
+                  id="btnRegister"
+                  onclick="CheckWholeForm(); return false;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount", "UA-1483977-7"]);
+        _gaq.push(["_setDomainName", "jinbay.com"]);
+        _gaq.push(["_setAllowLinker", true]);
+        _gaq.push(["_trackPageview"]);
+
+        (function () {
+          var ga = document.createElement("script");
+          ga.type = "text/javascript";
+          ga.async = true;
+          ga.src =
+            ("https:" == document.location.protocol
+              ? "https://ssl"
+              : "http://www") + ".google-analytics.com/ga.js";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+
+      <div
+        style="
+          text-align: center;
+          border-top: 8px solid #f2f2f2;
+          margin: 0 auto;
+          width: 100%;
+          margin-top: 20px;
+          padding-bottom: 20px;
+          padding-top: 20px;
+        "
+      >
+        &copy; 2022 Jinbay.com. 版权所有.
+      </div>
+
+      <script type="text/javascript">
+        document.getElementById("btnRegister").disabled = false;
+      </script>
+    </form>
+
+    <script type="text/javascript">
+      $("#language").change(function () {
+        window.location.href =
+          "https://passport.jinbay.com/user/userregister.aspx?reurl=https://www.jinbay.com//&lang=" +
+          $(this).val();
+      });
+    </script>
+    <script type="text/javascript">
+      window.language = "zh-cn";
+      window.slidearrowtocomplete = "向右滑动箭头填充拼图";
+      window.Username_txt = "输入您的用户名，例：bigboy_01";
+      window.Username_txt2 =
+        "6-20个字符(限英文字母、数字、下划线)，例：bigboy_01";
+      window.Username_txt3 = "系统正忙，暂时无法注册,请联系管理员";
+      window.Username_txt4 = "正在验证用户名...";
+      window.Username_txt5 = "该用户名已被注册，换个用户名试试！";
+      window.Email_txt = "输入真实有效的电子邮箱地址！";
+      window.Email_txt2 = "输入您的电子邮箱地址！";
+      window.Email_txt3 = "系统正忙，暂时无法注册,请联系管理员";
+      window.Email_txt4 = "正在验证电子邮箱地址...";
+      window.Email_txt5 =
+        "该邮箱收不到确认邮件，推荐使用126、163、gmail、<br />sina、sohu等邮箱注册。";
+
+      window.login = "登录";
+      window.Error_Email3 = "该邮箱已注册金海湾会员！换个邮箱或";
+      window.Error_Password = "请输入6位以上英文字母或数字";
+      window.Error_Password2 = "密码中不可以包含空格或非法字符";
+      window.Error_RePassword2 = "您输入的两次密码不相同,请重新输入！";
+      window.Error_RealName2 = "请正确输入您的昵称";
+      window.Error_Accept = "同意遵守金海湾使用条款即可成为金海湾会员。";
+
+      window.registernow = "立即注册";
+      window.submitting = "正在提交...";
+
+      window.code_passed = "通过验证";
+      window.code_refresh = "点击刷新验证码";
+      window.code_loading = "正在载入...";
+      window.code_loadfailed = "验证码获取失败,";
+    </script>
+  </body>
+</html>
